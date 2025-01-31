@@ -1,12 +1,13 @@
-﻿namespace Cellm.Models.Providers.Ollama;
+﻿
+namespace Cellm.Models.Providers.DeepSeek;
 
-internal class OllamaConfiguration : IProviderConfiguration
+internal class DeepSeekConfiguration : IProviderConfiguration
 {
-    public Uri ZipUrl { get; init; } = default!;
-
     public Uri BaseAddress { get; init; } = default!;
 
     public string DefaultModel { get; init; } = string.Empty;
+
+    public string ApiKey { get; init; } = string.Empty;
 
     public List<string> Models { get; init; } = [];
 }

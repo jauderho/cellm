@@ -2,13 +2,11 @@
 
 internal class LlamafileConfiguration : IProviderConfiguration
 {
-    public Uri BaseAddress { get; init; }
+    public Uri BaseAddress { get; init; } = default!;
 
-    public string DefaultModel { get; init; }
+    public string DefaultModel { get; init; } = string.Empty;
 
-    public LlamafileConfiguration()
-    {
-        BaseAddress = default!;
-        DefaultModel = default!;
-    }
+    public string ApiKey { get; init; } = string.Empty;
+
+    public List<string> Models { get; init; } = [];
 }

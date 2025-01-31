@@ -1,4 +1,5 @@
-﻿using Cellm.Models.Prompts;
+using Cellm.Models.Prompts;
+using Microsoft.Extensions.Options;
 
 namespace Cellm.Models.Providers.OpenAiCompatible;
 
@@ -12,7 +13,7 @@ internal class OpenAiCompatibleRequestHandler(
         var chatClient = openAiCompatibleChatClientFactory.Create(
             request.BaseAddress,
             request.Prompt.Options.ModelId ?? string.Empty,
-            request.ApiKey ?? "API_KEY");
+            request.ApiKey);
 
         var chatCompletion = await chatClient.CompleteAsync(request.Prompt.Messages, request.Prompt.Options, cancellationToken);
 
